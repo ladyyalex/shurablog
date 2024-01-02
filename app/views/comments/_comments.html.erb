@@ -1,0 +1,13 @@
+<% @post.comments.each do |comment| %>
+  <div class="well">
+  <p><strong> <%= comment.name%></strong>: <%= comment.body %>
+
+
+<%= link_to 'Remove Comment', [comment.post, comment],
+    method: :delete,
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete this comment?"} %>
+
+
+    </p>
+    </div>
+    <% end %>
